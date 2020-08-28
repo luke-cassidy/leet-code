@@ -14,3 +14,12 @@ This project contains my solutions to the LeetCode lessons/challenges.
 
 2. `23/08/2020`
    - added java and python solutions to SingleNumber problem
+
+3. `28/08/2020`
+   - added some java and python solutions for:
+      - RotateArray problem
+      - TwoSum problem
+      - IntersertionOfTwoArraysII problem
+      - ReverseString problem
+      - FirstUniqueCharacterInString problem
+      - StringToInteger problem
