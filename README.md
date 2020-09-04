@@ -25,4 +25,7 @@ This project contains my solutions to the LeetCode lessons/challenges.
       - StringToInteger problem
 
 4. `04/09/2020`
+   - added java and python solutions to ReverseLinkedList problem
+
+5. `04/09/2020`
    - added java and python solutions for ImplementStrStr problems
