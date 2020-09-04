@@ -23,3 +23,6 @@ This project contains my solutions to the LeetCode lessons/challenges.
       - ReverseString problem
       - FirstUniqueCharacterInString problem
       - StringToInteger problem
+
+4. `04/09/2020`
+   - added java and python solutions to ReverseLinkedList problem
