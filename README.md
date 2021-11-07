@@ -30,5 +30,8 @@ This project contains my solutions to the LeetCode lessons/challenges.
 5. `04/09/2020`
    - added java and python solutions for ImplementStrStr problems
 
-6. `06/11/2021`
+6. `12/09/2020`
+   - added python solutions for MergeTwoSortedLists, PalindromeLinkedList and LinkedListCycle problems
+
+7. `06/11/2021`
    - added python solution to MaximumDepthOfBinaryTree problem
