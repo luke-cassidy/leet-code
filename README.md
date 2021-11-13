@@ -35,3 +35,6 @@ This project contains my solutions to the LeetCode lessons/challenges.
 
 7. `06/11/2021`
    - added python solution to MaximumDepthOfBinaryTree problem
+
+8. `13/11/2021`
+   - added python solution to BestTimeToBuyAndSellStockII problem
