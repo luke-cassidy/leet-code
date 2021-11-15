@@ -1,3 +1,4 @@
+from math import inf
 from typing import Optional
 
 # Definition for a binary tree node.
@@ -27,8 +28,22 @@ class Solution:
         return self.isValidBST(root.left, root, leftParent) and self.isValidBST(root.right, rightParent, root)
 
 
-# test cases
+class Solution2:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
 
+        def validate(currentNode: Optional[TreeNode], upperbound: float, lowerbound: float) -> bool:
+            if not currentNode:
+                return True
+
+            if currentNode.val <= lowerbound or currentNode.val >= upperbound:
+                return False
+
+            return validate(currentNode.left, currentNode.val, lowerbound) and validate(currentNode.right, upperbound, currentNode.val)
+
+        return validate(root, inf, -inf)
+
+
+# test cases
 print("Solution (None) (True) {}".format(Solution().isValidBST(None)))
 print("Solution (1) (True) {}".format(Solution().isValidBST(TreeNode())))
 print("Solution (2) (True) {}".format(Solution().isValidBST(
