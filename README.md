@@ -27,8 +27,25 @@ This project contains my solutions to the LeetCode lessons/challenges.
 4. `04/09/2020`
    - added java and python solutions to ReverseLinkedList problem
 
-5. `16/11/2021`
-   - added python solutions to:
+5. `04/09/2020`
+   - added java and python solutions for ImplementStrStr problems
+
+6. `12/09/2020`
+   - added python solutions for MergeTwoSortedLists, PalindromeLinkedList and LinkedListCycle problems
+
+7. `06/11/2021`
+   - added python solution to MaximumDepthOfBinaryTree problem
+
+8. `13/11/2021`
+   - added python solution to BestTimeToBuyAndSellStockII problem
+
+9. `15/11/2021`
+   - added python solution to ValidateBinarySearchTree problem
+   - added cleaner solution for ValidateBinarySearchTree problem
+   - added recursive solution for BinaryTreeInorderTraversal problem
+
+10. `16/11/2021`
+    - added python solutions to:
       - CountPrimes
       - FizzBuzz
       - PowerOfThree
