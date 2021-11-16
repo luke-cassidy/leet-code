@@ -26,3 +26,9 @@ This project contains my solutions to the LeetCode lessons/challenges.
 
 4. `04/09/2020`
    - added java and python solutions to ReverseLinkedList problem
+
+5. `16/11/2021`
+   - added python solutions to:
+      - CountPrimes
+      - FizzBuzz
+      - PowerOfThree
