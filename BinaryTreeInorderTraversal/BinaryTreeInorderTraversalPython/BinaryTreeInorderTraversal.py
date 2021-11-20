@@ -1,5 +1,5 @@
 # Definition for a binary tree node.
-from typing import List, Optional
+from typing import List, Optional, Tuple, Union, cast
 
 
 class TreeNode:
@@ -9,9 +9,10 @@ class TreeNode:
         self.right = right
 
 
+# recursive solution
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        result: List[int]  = []
+        result: List[int] = []
         if root == None:
             return result
 
@@ -20,6 +21,45 @@ class Solution:
         result += self.inorderTraversal(root.right)
 
         return result
+
+
+# iterative solution
+
+class Solution2:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result: List[int] = []
+        if root == None:
+            return result
+
+        nodeStack: List[TreeNode] = [root]
+        leftStack: List[bool] = [False]
+        rightStack: List[bool] = [False]
+
+        while nodeStack:
+            currNode: TreeNode = nodeStack[-1]
+            if currNode.left != None and not leftStack[-1]:
+                leftStack[-1] = True
+                nodeStack.append(currNode.left)
+                leftStack.append(False)
+                rightStack.append(False)
+                continue
+
+            if not rightStack[-1]:
+                result.append(currNode.val)
+
+            if currNode.right != None and not rightStack[-1]:
+                rightStack[-1] = True
+                nodeStack.append(currNode.right)
+                leftStack.append(False)
+                rightStack.append(False)
+                continue
+
+            nodeStack.pop()
+            leftStack.pop()
+            rightStack.pop()
+
+        return result
+
 
 # test cases
 print("Solution (None) ([]]) {}".format(Solution().inorderTraversal(None)))
