@@ -1,5 +1,5 @@
 # Definition for a binary tree node.
-from typing import List, Optional, Tuple, Union, cast
+from typing import List, Optional
 
 
 class TreeNode:
@@ -10,7 +10,7 @@ class TreeNode:
 
 
 # recursive solution
-class Solution:
+class Solution1:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
         result: List[int] = []
         if root == None:
@@ -23,7 +23,7 @@ class Solution:
         return result
 
 
-# iterative solution
+# initial iterative solution
 
 class Solution2:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
@@ -57,6 +57,47 @@ class Solution2:
             nodeStack.pop()
             leftStack.pop()
             rightStack.pop()
+
+        return result
+
+
+# proper stacked iterative solution
+
+class Solution3:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result: List[int] = []
+        stack: List[TreeNode] = []
+        curr = root
+        while curr != None or len(stack) != 0:
+            while curr != None:
+                stack.append(curr)
+                curr = curr.left
+
+            prev = stack.pop()
+            result.append(prev.val)
+            curr = prev.right
+
+        return result
+
+# morris traversal
+
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result: List[int] = []
+        curr = root
+        while curr != None:
+            if curr.left != None:
+                subCurr = curr.left
+                while subCurr.right != None:
+                    subCurr = subCurr.right
+                subCurr.right = curr
+                temp = curr.left
+                curr.left = None
+                curr = temp
+            else:
+                result.append(curr.val)
+                curr = curr.right
 
         return result
 
