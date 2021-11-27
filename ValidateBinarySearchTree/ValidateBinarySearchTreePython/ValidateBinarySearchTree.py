@@ -1,5 +1,5 @@
 from math import inf
-from typing import Optional
+from typing import List, Optional
 
 # Definition for a binary tree node.
 
@@ -14,7 +14,7 @@ class TreeNode:
 # recursive solution
 
 
-class Solution:
+class Solution1:
     def isValidBST(self, root: Optional[TreeNode], rightParent: Optional[TreeNode] = None, leftParent: Optional[TreeNode] = None) -> bool:
         if root == None:
             return True
@@ -41,6 +41,64 @@ class Solution2:
             return validate(currentNode.left, currentNode.val, lowerbound) and validate(currentNode.right, upperbound, currentNode.val)
 
         return validate(root, inf, -inf)
+
+# iterative in-order solution
+
+
+class Solution3:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # stack iterative inorder traversal
+        def traverse(root: TreeNode) -> List[int]:
+            result: List[int] = []
+            stack: List[TreeNode] = []
+            curr = root
+            while stack or curr:
+                while curr:
+                    stack.append(curr)
+                    curr = curr.left
+
+                curr = stack.pop()
+                result.append(curr.val)
+                curr = curr.right
+
+            return result
+
+        if not root:
+            return True
+
+        # loop through comaring order
+        prev: Optional[int] = None
+        for curr in traverse(root):
+            if prev != None and curr <= prev:
+                return False
+            prev = curr
+
+        return True
+
+# recursive in-order solution
+
+
+class Solution:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # recursive inorder traversal
+        def traverse(root: Optional[TreeNode]) -> List[int]:
+            result: List[int] = []
+            if not root:
+                return result
+
+            result += traverse(root.left)
+            result.append(root.val)
+            result += traverse(root.right)
+            return result
+
+        # loop through comaring order
+        prev: Optional[int] = None
+        for curr in traverse(root):
+            if prev != None and curr <= prev:
+                return False
+            prev = curr
+
+        return True
 
 
 # test cases

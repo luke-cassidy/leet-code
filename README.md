@@ -56,3 +56,6 @@ This project contains my solutions to the LeetCode lessons/challenges.
 12. `21/11/2021`
    - added cleaner iterative with stack solution to BinaryTreeInorderTraversal problem
    - added morris traversal solution to BinaryTreeInorderTraversal problem
+
+13. `27/11/2021`
+   - added python inorder solutions to ValidateBinarySearchTree problem
