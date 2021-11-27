@@ -78,7 +78,7 @@ class Solution3:
 # recursive in-order solution
 
 
-class Solution:
+class Solution4:
     def isValidBST(self, root: Optional[TreeNode]) -> bool:
         # recursive inorder traversal
         def traverse(root: Optional[TreeNode]) -> List[int]:
@@ -99,6 +99,92 @@ class Solution:
             prev = curr
 
         return True
+
+# optimised iterative in-order solution
+
+
+class Solution5:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # stack iterative inorder morris traversal
+        def traverse(root: TreeNode) -> bool:
+            prev = -inf
+            curr = root
+            while curr:
+                if curr.left:
+                    subCurr = curr.left
+                    while subCurr.right:
+                        subCurr = subCurr.right
+
+                    temp = curr
+                    subCurr.right = curr
+                    curr = curr.left
+                    temp.left = None
+                else:
+                    if not curr.val > prev:
+                        return False
+
+                    prev = curr.val
+                    curr = curr.right
+
+            return True
+
+        if not root:
+            return True
+
+        return traverse(root)
+
+# opitmised recursive in-order solution
+
+
+class Solution6:
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        # recursive inorder traversal
+        def traverse(root: Optional[TreeNode]) -> bool:
+            if not root:
+                return True
+
+            if not traverse(root.left):
+                return False
+
+            if root.val > self.prev:
+                self.prev = root.val
+            else:
+                return False
+
+            return traverse(root.right)
+
+        self.prev = -inf
+        return traverse(root)
+
+# weird recursive solution
+
+
+class Result:
+    def __init__(self, min: float, max: float) -> None:
+        self.min = min
+        self.max = max
+
+
+class Solution:
+
+    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+        def traverse(root: Optional[TreeNode]) -> Result:
+            if not root:
+                return Result(+inf, -inf)
+
+            left = traverse(root.left)
+            right = traverse(root.right)
+
+            if root.val > left.max and root.val < right.min:
+                return Result(min(root.val, left.min), max(root.val, right.max))
+            else:
+                raise Exception()
+
+        try:
+            traverse(root)
+            return True
+        except:
+            return False
 
 
 # test cases

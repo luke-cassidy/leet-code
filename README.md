@@ -59,3 +59,4 @@ This project contains my solutions to the LeetCode lessons/challenges.
 
 13. `27/11/2021`
    - added python inorder solutions to ValidateBinarySearchTree problem
+   - added optimised iterative and recursive in-order python solutions to ValidateBinarySearchTree problem
