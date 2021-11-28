@@ -9,9 +9,10 @@ class TreeNode:
         self.right = right
 
 
-class Solution:
+# recursive solution
+class Solution1:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        result: List[int]  = []
+        result: List[int] = []
         if root == None:
             return result
 
@@ -20,6 +21,86 @@ class Solution:
         result += self.inorderTraversal(root.right)
 
         return result
+
+
+# initial iterative solution
+
+class Solution2:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result: List[int] = []
+        if root == None:
+            return result
+
+        nodeStack: List[TreeNode] = [root]
+        leftStack: List[bool] = [False]
+        rightStack: List[bool] = [False]
+
+        while nodeStack:
+            currNode: TreeNode = nodeStack[-1]
+            if currNode.left != None and not leftStack[-1]:
+                leftStack[-1] = True
+                nodeStack.append(currNode.left)
+                leftStack.append(False)
+                rightStack.append(False)
+                continue
+
+            if not rightStack[-1]:
+                result.append(currNode.val)
+
+            if currNode.right != None and not rightStack[-1]:
+                rightStack[-1] = True
+                nodeStack.append(currNode.right)
+                leftStack.append(False)
+                rightStack.append(False)
+                continue
+
+            nodeStack.pop()
+            leftStack.pop()
+            rightStack.pop()
+
+        return result
+
+
+# proper stacked iterative solution
+
+class Solution3:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result: List[int] = []
+        stack: List[TreeNode] = []
+        curr = root
+        while curr != None or len(stack) != 0:
+            while curr != None:
+                stack.append(curr)
+                curr = curr.left
+
+            prev = stack.pop()
+            result.append(prev.val)
+            curr = prev.right
+
+        return result
+
+# morris traversal
+
+
+class Solution:
+    def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        result: List[int] = []
+        curr = root
+        while curr != None:
+            if curr.left != None:
+                subCurr = curr.left
+                while subCurr.right != None:
+                    subCurr = subCurr.right
+                subCurr.right = curr
+                temp = curr.left
+                curr.left = None
+                curr = temp
+            else:
+                result.append(curr.val)
+                curr = curr.right
+
+        return result
+
 
 # test cases
 print("Solution (None) ([]]) {}".format(Solution().inorderTraversal(None)))

@@ -43,3 +43,20 @@ This project contains my solutions to the LeetCode lessons/challenges.
    - added python solution to ValidateBinarySearchTree problem
    - added cleaner solution for ValidateBinarySearchTree problem
    - added recursive solution for BinaryTreeInorderTraversal problem
+
+10. `16/11/2021`
+    - added python solutions to:
+      - CountPrimes
+      - FizzBuzz
+      - PowerOfThree
+
+11. `20/11/2021`
+   - added iterative solution to BinaryTreeInorderTraversal problem
+
+12. `21/11/2021`
+   - added cleaner iterative with stack solution to BinaryTreeInorderTraversal problem
+   - added morris traversal solution to BinaryTreeInorderTraversal problem
+
+13. `27/11/2021`
+   - added python inorder solutions to ValidateBinarySearchTree problem
+   - added optimised iterative and recursive in-order python solutions to ValidateBinarySearchTree problem
