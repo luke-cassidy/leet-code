@@ -1,4 +1,4 @@
-from typing import List, Optional
+from typing import List, Optional, Tuple
 
 
 # Definition for a binary tree node.
@@ -11,7 +11,7 @@ class TreeNode:
 # resursive solution
 
 
-class Solution:
+class Solution1:
     # essentially dfs
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         def traverse(root: Optional[TreeNode], level: int):
@@ -28,6 +28,34 @@ class Solution:
 
         result: List[List[int]] = []
         traverse(root, 0)
+        return result
+
+# iterative solution
+
+
+class Solution:
+    # actual bfs using queue
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        result: List[List[int]] = []
+        if not root:
+            return result
+
+        queue: List[Tuple[int, TreeNode]] = [(0, root)]
+        while queue:
+            curr = queue.pop(0)
+            currLevel = curr[0]
+            currNode = curr[1]
+
+            if currLevel < len(result):
+                result[currLevel].append(currNode.val)
+            else:
+                result.append([currNode.val])
+
+            if currNode.left:
+                queue.append((currLevel + 1, currNode.left))
+            if currNode.right:
+                queue.append((currLevel + 1, currNode.right))
+
         return result
 
 
