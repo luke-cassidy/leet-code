@@ -33,7 +33,7 @@ class Solution1:
 # iterative solution
 
 
-class Solution:
+class Solution2:
     # actual bfs using queue
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         result: List[List[int]] = []
@@ -55,6 +55,32 @@ class Solution:
                 queue.append((currLevel + 1, currNode.left))
             if currNode.right:
                 queue.append((currLevel + 1, currNode.right))
+
+        return result
+
+
+class Solution:
+    # actual bfs using queue, without level memo
+    def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
+        result: List[List[int]] = []
+        if not root:
+            return result
+
+        queue: List[TreeNode] = [root]
+        while queue:
+            levelResult: List[int] = []
+            levelSize = len(queue)
+            i = 0
+            while i < levelSize:
+                curr = queue.pop(0)
+                levelResult.append(curr.val)
+                if curr.left:
+                    queue.append(curr.left)
+                if curr.right:
+                    queue.append(curr.right)
+                i += 1
+
+            result.append(levelResult)
 
         return result
 
