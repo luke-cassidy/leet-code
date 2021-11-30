@@ -24,7 +24,7 @@ class Solution:
                 result.append([root.val])
 
             traverse(root.left, level+1)
-            traverse(root.right, level+1)
+            traverse(root.right, level+1)  # type: ignore
 
         result: List[List[int]] = []
         traverse(root, 0)
