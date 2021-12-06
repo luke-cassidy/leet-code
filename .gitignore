@@ -27,6 +27,6 @@
 **/__pycache__
 **/*.pyc
 
-# python vene folder
+# python venv folder
 venv
 
