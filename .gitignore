@@ -30,3 +30,5 @@
 # python venv folder
 venv
 
+# include
+!config/**
