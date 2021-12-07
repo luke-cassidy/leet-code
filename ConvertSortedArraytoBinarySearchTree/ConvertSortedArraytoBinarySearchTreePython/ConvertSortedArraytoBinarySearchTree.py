@@ -3,7 +3,8 @@ from typing import List, Optional
 from modules.tree import TreeNode
 
 
-class Solution:
+# inital incorrect solution, due to misinterpreting question
+class Solution1:
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
         def convertToTree(nums: List[int]) -> Optional[TreeNode]:
             if len(nums) == 0:
@@ -27,11 +28,28 @@ class Solution:
 
         return root
 
+# recursive solution
+
+
+class Solution:
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        length = len(nums)
+        if length == 0:
+            return None
+
+        middle = length // 2
+        curr = TreeNode(nums[middle])
+        if length >= 2:
+            middle = length // 2
+            curr.left = self.sortedArrayToBST(nums[:middle])
+            curr.right = self.sortedArrayToBST(nums[middle + 1:])
+        return curr
+
 
 print("Solution None -> None: {} ".format(Solution().sortedArrayToBST([])))
 print("Solution [0] -> [0]: {} ".format(Solution().sortedArrayToBST([0])))
 print(
-    "Solution [-1, 0] -> [0, -1 None]: {} ".format(Solution().sortedArrayToBST([-1, 0])))
+    "Solution [-1, 0] -> [0, -1, None]: {} ".format(Solution().sortedArrayToBST([-1, 0])))
 print(
     "Solution [-1, 0, 1] -> [0, -1, 1]: {} ".format(Solution().sortedArrayToBST([-1, 0, 1])))
 print("Solution [-2, -1, 0, 1] -> [0, -1, 1, -2, None]: {} ".format(
