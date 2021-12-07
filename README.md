@@ -69,3 +69,4 @@ This project contains my solutions to the LeetCode lessons/challenges.
 15. `07/12/2021`
     - added initial incorrect solution to misunderstood ConvertSortedArrayToBinarySearchTree problem
     - added correct python recursive solution to ConvertSortedArrayToBinarySearchTree problem
+    - added python recursive without slicing solution to ConvertSortedArrayToBinarySearchTree problem

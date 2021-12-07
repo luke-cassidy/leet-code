@@ -31,7 +31,8 @@ class Solution1:
 # recursive solution
 
 
-class Solution:
+class Solution2:
+    # apperently slicing takes O(n) time, therefore O(n * log(n)) overall
     def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
         length = len(nums)
         if length == 0:
@@ -40,10 +41,26 @@ class Solution:
         middle = length // 2
         curr = TreeNode(nums[middle])
         if length >= 2:
-            middle = length // 2
             curr.left = self.sortedArrayToBST(nums[:middle])
             curr.right = self.sortedArrayToBST(nums[middle + 1:])
         return curr
+
+
+class Solution:
+    # without slicing
+    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+        def constructTree(nums: List[int], lower: int, upper: int) -> Optional[TreeNode]:
+            if lower == upper:
+                return None
+
+            middle = (lower + upper) // 2
+            curr = TreeNode(nums[middle])
+            curr.left = constructTree(nums, lower, middle)
+            curr.right = constructTree(nums, middle + 1, upper)
+
+            return curr
+
+        return constructTree(nums, 0, len(nums))
 
 
 print("Solution None -> None: {} ".format(Solution().sortedArrayToBST([])))
