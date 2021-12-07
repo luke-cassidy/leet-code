@@ -65,3 +65,6 @@ This project contains my solutions to the LeetCode lessons/challenges.
     - added recursive python solution to BinaryTreeLevelOrderTraversal problem
     - added iterative python solution to BinaryTreeLevelOrderTraversal problem
     - added iterative python solution to BinaryTreeLevelOrderTraversal problem without level memo
+
+15. `07/12/2021`
+    - added initial incorrect solution to misunderstood ConvertSortedArrayToBinarySearchTree problem
