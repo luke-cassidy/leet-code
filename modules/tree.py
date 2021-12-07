@@ -16,11 +16,12 @@ class TreeNode:
         queue: List[Optional[TreeNode]] = [self]
 
         while queue:
-            node = queue.pop()
+            node = queue.pop(0)
             if node:
                 result.append(node.val)
-                queue.append(node.left)
-                queue.append(node.right)
+                if node.left or node.right:
+                    queue.append(node.left)
+                    queue.append(node.right)
             else:
                 result.append(node)
 
