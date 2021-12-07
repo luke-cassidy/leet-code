@@ -51,12 +51,22 @@ This project contains my solutions to the LeetCode lessons/challenges.
       - PowerOfThree
 
 11. `20/11/2021`
-   - added iterative solution to BinaryTreeInorderTraversal problem
+    - added iterative solution to BinaryTreeInorderTraversal problem
 
 12. `21/11/2021`
-   - added cleaner iterative with stack solution to BinaryTreeInorderTraversal problem
-   - added morris traversal solution to BinaryTreeInorderTraversal problem
+    - added cleaner iterative with stack solution to BinaryTreeInorderTraversal problem
+    - added morris traversal solution to BinaryTreeInorderTraversal problem
 
 13. `27/11/2021`
-   - added python inorder solutions to ValidateBinarySearchTree problem
-   - added optimised iterative and recursive in-order python solutions to ValidateBinarySearchTree problem
+    - added python inorder solutions to ValidateBinarySearchTree problem
+    - added optimised iterative and recursive in-order python solutions to ValidateBinarySearchTree problem
+
+14. `30/11/2021`
+    - added recursive python solution to BinaryTreeLevelOrderTraversal problem
+    - added iterative python solution to BinaryTreeLevelOrderTraversal problem
+    - added iterative python solution to BinaryTreeLevelOrderTraversal problem without level memo
+
+15. `07/12/2021`
+    - added initial incorrect solution to misunderstood ConvertSortedArrayToBinarySearchTree problem
+    - added correct python recursive solution to ConvertSortedArrayToBinarySearchTree problem
+    - added python recursive without slicing solution to ConvertSortedArrayToBinarySearchTree problem
