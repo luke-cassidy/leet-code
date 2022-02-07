@@ -20,5 +20,5 @@ class Solution:
 
         return binarySearch(1, n)
 
-
-print("Solution 5 -> 3 : {}".format(Solution().firstBadVersion(1)))
+if __name__ == "__main__":
+    print("Solution 5 -> 3 : {}".format(Solution().firstBadVersion(1)))
