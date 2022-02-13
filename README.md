@@ -77,3 +77,4 @@ This project contains my solutions to the LeetCode lessons/challenges.
 
 17. `13/02/2022`
     - added pytest test to FirstBadVersion problem
+    - added MergeSortedArray solution in Java
