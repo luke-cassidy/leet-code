@@ -74,3 +74,6 @@ This project contains my solutions to the LeetCode lessons/challenges.
 16. `08/12/2021`
     - added initial recursive solution to FirstBadVersion problem
     - TODO: use testing framework to implement mock isBadVersion() interface
+
+17. `13/02/2022`
+    - added pytest test to FirstBadVersion problem

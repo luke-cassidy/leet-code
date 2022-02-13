@@ -2,7 +2,7 @@
 # @param version, an integer
 # @return an integer
 def isBadVersion(version: int) -> bool:
-    return version >= 3
+    ...
 
 # resursive solution
 class Solution:
@@ -19,6 +19,3 @@ class Solution:
                 return binarySearch(mid + 1, upper)
 
         return binarySearch(1, n)
-
-if __name__ == "__main__":
-    print("Solution 5 -> 3 : {}".format(Solution().firstBadVersion(1)))
