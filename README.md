@@ -70,3 +70,10 @@ This project contains my solutions to the LeetCode lessons/challenges.
     - added initial incorrect solution to misunderstood ConvertSortedArrayToBinarySearchTree problem
     - added correct python recursive solution to ConvertSortedArrayToBinarySearchTree problem
     - added python recursive without slicing solution to ConvertSortedArrayToBinarySearchTree problem
+
+16. `08/12/2021`
+    - added initial recursive solution to FirstBadVersion problem
+    - TODO: use testing framework to implement mock isBadVersion() interface
+
+17. `13/02/2022`
+    - added pytest test to FirstBadVersion problem
