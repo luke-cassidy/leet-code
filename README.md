@@ -83,4 +83,7 @@ This project contains my solutions to the LeetCode lessons/challenges.
     - added ClimbingStairs solution in Java
     - added BestTimeToBuyAndSellStock solution in Java
     - added MaximumSubArray solution in Java
+
+19. `15/02/2022`
     - added MaximumSubArray recursive solution in Java
+    - added NumberOf1Bits solution in Java
