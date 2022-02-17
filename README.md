@@ -87,3 +87,6 @@ This project contains my solutions to the LeetCode lessons/challenges.
 19. `15/02/2022`
     - added MaximumSubArray recursive solution in Java
     - added NumberOf1Bits solution in Java
+
+20. `17/02/2022`
+    - added ValidParentheses solution in Java
